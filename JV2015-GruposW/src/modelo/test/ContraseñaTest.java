@@ -14,7 +14,7 @@ import util.Fecha;
 
 /**
  * Realiza un test sobre la clase Contraseña del modelo.
- * Test textoValido no implementado aún.
+ * Test textoValido no queda claro.
  * Test toString no implementado aún.
  * 
  * @author Fernando Meseguer Fernández
