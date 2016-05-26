@@ -22,7 +22,7 @@ public class ContraseñaTest {
 	@Before
 	public void crearObjectosPrueba(){
 		contraseña1 = new Contraseña();
-		contraseña2 = new Contraseña("holakase");
+		contraseña2 = new Contraseña("HolaKase1_");
 		new Contraseña(contraseña2);
 	}
 	
@@ -33,33 +33,31 @@ public class ContraseñaTest {
 	}
 	
 	@Test
-	
-	public void testTextoValido() {
-		try{
-			contraseña2.setTexto(null);
-			
-		} catch(AssertionError e){
-			assertNotNull(contraseña2.toString());
-		}
-		//nada claro niggarl
-	}
-	
-	@Test
 	public void testSetTexto(){
-		String texto = "holakase";
+		String texto = "HolaK1Ase_";
 		contraseña1.setTexto(texto);
 		assertEquals(contraseña1.toString(), texto);
 	}
 	
 	@Test
-	public void testEncriptar(){
-		String claveAcceso = "holakase";
-		System.out.println(util.Criptografia.cesar(claveAcceso)); 
+	public void testSetTextoInvalido(){
+		try {
+			//Intentamos insertar una contraseña nula
+			contraseña2.setTexto(null);
+		} catch (AssertionError e) {
+			assertNotNull(contraseña2.toString());
+		}
+		
+		try {
+			//Intentamos insertar una contraseña que no sea robusta (mirar patrón).
+			contraseña2.setTexto("HolaKAse");
+		} catch (AssertionError e) {
+			assertNotNull(contraseña2.toString());
+		}
 	}
 
 	@Test
 	public void testToString(){
-		// ?¿ ni idea
+		assertNotNull(contraseña2.toString());
 	}
-	
 }
