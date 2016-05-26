@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import modelo.Contraseña;
 import modelo.Mundo;
 import modelo.Simulacion;
 import modelo.Simulacion.EstadoSimulacion;
@@ -30,7 +31,7 @@ public class ContraseñaTest {
 	public void crearObjectosPrueba(){
 		contraseña1 = new Contraseña();
 		contraseña2 = new Contraseña("holakase");
-		contraseña3 = new Contraseña(simulacion2);
+		contraseña3 = new Contraseña(contraseña2);
 	}
 	
 	@After
@@ -42,12 +43,12 @@ public class ContraseñaTest {
 	
 	@Test
 	
-	private boolean testTextoValido(String texto) {
+	public void testTextoValido() {
 		try{
 			contraseña2.setTexto(null);
 			
 		} catch(AssertionError e){
-			assertNotNUll(contraseña2.toString());
+			assertNotNull(contraseña2.toString());
 		}
 		//nada claro niggarl
 	}
@@ -62,7 +63,7 @@ public class ContraseñaTest {
 	@Test
 	public void testEncriptar(){
 		String claveAcceso = "holakase";
-		echo util.Criptografia.cesar(claveAcceso);
+		System.out.println(util.Criptografia.cesar(claveAcceso)); 
 	}
 
 	@Test
