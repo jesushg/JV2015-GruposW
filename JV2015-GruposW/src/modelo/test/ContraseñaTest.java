@@ -7,12 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import modelo.Contraseña;
-import modelo.Mundo;
-import modelo.Simulacion;
-import modelo.Simulacion.EstadoSimulacion;
-import modelo.Usuario;
-import util.Fecha;
-
 /**
  * Realiza un test sobre la clase Contraseña del modelo.
  * Test textoValido no queda claro.
@@ -25,20 +19,17 @@ public class ContraseñaTest {
 	
 	private Contraseña contraseña1;
 	private Contraseña contraseña2;
-	private Contraseña contraseña3;
-	
 	@Before
 	public void crearObjectosPrueba(){
 		contraseña1 = new Contraseña();
 		contraseña2 = new Contraseña("holakase");
-		contraseña3 = new Contraseña(contraseña2);
+		new Contraseña(contraseña2);
 	}
 	
 	@After
 	public void borrarObjetosPrueba(){
 		contraseña1 = null;
 		contraseña2 = null;
-		contraseña3 = null;
 	}
 	
 	@Test
