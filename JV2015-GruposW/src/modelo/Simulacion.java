@@ -1,5 +1,13 @@
 package modelo;
-
+/** 
+ * Proyecto: Juego de la vida.
+ *  Organiza aspectos de gestión de la simulación 
+ *  según el modelo2.1
+ *  @since: prototipo2.1
+ *  @source: Simulacion.java 
+ *  @version: 1.0 - 24/04/2016
+ *  @author: ajp
+ */
 
 import java.io.Serializable;
 import java.util.Hashtable;
@@ -7,7 +15,7 @@ import java.util.Map;
 
 import util.Fecha;
 
-public class Simulacion implements Serializable {
+public class Simulacion {
 	
 	public enum EstadoSimulacion  {
 		PREPARADA, INICIADA, COMPLETADA
