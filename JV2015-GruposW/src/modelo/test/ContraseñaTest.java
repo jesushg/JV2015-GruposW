@@ -43,14 +43,13 @@ public class ContraseñaTest {
 	@Test
 	
 	private boolean testTextoValido(String texto) {
-		String texto = "eeeeeeooo";
-		if (texto != null 
-				&& util.Formato.validar(texto, Formato.PATRON_CONTRASEÑA3)) {
-			return true;
+		try{
+			contraseña2.setTexto(null);
+			
+		} catch(AssertionError e){
+			assertNotNUll(contraseña2.toString());
 		}
-		return false;
-		
-		//no queda claro este método
+		//nada claro niggarl
 	}
 	
 	@Test
